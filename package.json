@@ -1,0 +1,38 @@
+{
+  "name": "coordinate-conversion",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Library to convert NMS coordinates",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "format": "prettier --write src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lenni009/simple-image-compressor.git"
+  },
+  "keywords": [
+    "compressor",
+    "images",
+    "frontend"
+  ],
+  "author": "NMSCD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lenni009/simple-image-compressor/issues"
+  },
+  "homepage": "https://github.com/Lenni009/simple-image-compressor#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.1",
+    "vite-plugin-dts": "^3.7.2"
+  }
+}
