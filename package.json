@@ -1,7 +1,7 @@
 {
   "name": "@nmscd/coordinate-conversion",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Library to convert NMS coordinates",
   "main": "./dist/index.js",
@@ -16,19 +16,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lenni009/simple-image-compressor.git"
+    "url": "git+https://github.com/NMSCD/Coordinate-Conversion.git"
   },
   "keywords": [
-    "compressor",
-    "images",
-    "frontend"
+    "No Man's Sky",
+    "Coordinates",
+    "Converter"
   ],
   "author": "NMSCD",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Lenni009/simple-image-compressor/issues"
+    "url": "https://github.com/NMSCD/Coordinate-Conversion/issues"
   },
-  "homepage": "https://github.com/Lenni009/simple-image-compressor#readme",
+  "homepage": "https://github.com/NMSCD/Coordinate-Conversion#readme",
   "devDependencies": {
     "@types/node": "^20.11.19",
     "prettier": "^3.2.5",
