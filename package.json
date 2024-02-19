@@ -1,5 +1,6 @@
 {
-  "name": "coordinate-conversion",
+  "name": "@nmscd/coordinate-conversion",
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "description": "Library to convert NMS coordinates",
