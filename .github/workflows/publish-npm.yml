@@ -6,7 +6,8 @@ on:
   push:
     branches: ['main']
     paths:
-      - 'src/**.ts'
+      - 'src/**/*'
+      - '!src/**/*.spec.*'
 
 concurrency:
   group: 'publish'

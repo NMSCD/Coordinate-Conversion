@@ -6,7 +6,8 @@ on:
     types: [opened, synchronize]
     branches: main
     paths:
-      - 'src/**.ts'
+      - 'src/**/*'
+      - '!src/**/*.spec.*'
 
 concurrency:
   group: 'checkversion'
