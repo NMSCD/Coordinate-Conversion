@@ -14,7 +14,7 @@ export default defineConfig({
   base: './',
   plugins: [
     dts({
-      exclude: ['**/**.spec.**'],
+      exclude: ['**/**.spec.**', '*.config.*'],
       insertTypesEntry: true,
     }),
   ],
