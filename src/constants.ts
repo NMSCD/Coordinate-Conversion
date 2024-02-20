@@ -1,2 +1,2 @@
-const maxCoordLength = 19;
-const maxGlyphLength = 12;
+export const maxCoordLength = 19;
+export const maxGlyphLength = 12;

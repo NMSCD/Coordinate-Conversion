@@ -1,7 +1,14 @@
 // vite.config.js
-import { resolve } from 'path';
+import path, { resolve } from 'path';
 import { defineConfig } from 'vite';
+import { configDefaults } from 'vitest/config';
 import dts from 'vite-plugin-dts';
+
+const testDef = {
+  test: {
+    exclude: [...configDefaults.exclude, './build/**', './dist/**'],
+  },
+};
 
 export default defineConfig({
   base: './',
@@ -18,4 +25,10 @@ export default defineConfig({
       formats: ['es'],
     },
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  ...testDef,
 });

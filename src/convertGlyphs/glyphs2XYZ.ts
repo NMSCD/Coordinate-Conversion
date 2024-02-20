@@ -1,4 +1,5 @@
-import type { XYZ } from "../types";
+import { maxGlyphLength } from '@/constants';
+import type { XYZ } from '../types';
 
 function splitGlyphs(glyphs: string) {
   const x_glyphs = glyphs.substring(9, 12);
