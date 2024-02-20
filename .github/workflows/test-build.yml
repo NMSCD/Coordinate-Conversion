@@ -6,7 +6,7 @@ on:
     types: [opened, synchronize]
 
 concurrency:
-  group: "testbuild"
+  group: 'testbuild'
   cancel-in-progress: true
 
 jobs:

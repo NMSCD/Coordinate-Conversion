@@ -4,6 +4,8 @@ run-name: Check Version
 on:
   pull_request:
     types: [opened, synchronize]
+    paths:
+      - 'src/**.ts'
 
 concurrency:
   group: 'checkversion'
@@ -14,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      contents: write
       pull-requests: write
 
     steps:

@@ -5,6 +5,8 @@ run-name: Publish NPM Package
 on:
   push:
     branches: ['main']
+    paths:
+      - 'src/**.ts'
 
 concurrency:
   group: 'publish'
