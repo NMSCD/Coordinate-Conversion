@@ -1,6 +1,12 @@
-import type { XYZ } from '../types';
+import type { VoxelCoordinates } from '@/types/voxelTypes';
 
-export function xyz2Glyphs({ VoxelX, VoxelY, VoxelZ, SolarSystemIndex, PlanetIndex }: XYZ): string {
+export function xyz2Glyphs({
+  voxelX: VoxelX,
+  voxelY: VoxelY,
+  voxelZ: VoxelZ,
+  solarSystemIndex: SolarSystemIndex,
+  planetIndex: PlanetIndex,
+}: VoxelCoordinates): string {
   let x_glyphs, y_glyphs, z_glyphs;
   if (VoxelX < 0) {
     x_glyphs = VoxelX + 4096;

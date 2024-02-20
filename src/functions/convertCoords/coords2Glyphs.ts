@@ -1,5 +1,7 @@
+import { exactGlyphLength, maxGalacticCoordLength } from '@/constants/restrictions';
+
 export function coords2Glyphs(coords: string): string {
-  if (coords.length !== maxCoordLength) return coords;
+  if (coords.length !== maxGalacticCoordLength) return coords;
 
   const X_Z_POS_SHIFT = 2049;
   const X_Z_NEG_SHIFT = 2047;
@@ -39,5 +41,5 @@ export function coords2Glyphs(coords: string): string {
   ];
   const glyphString = glyphs.join('');
 
-  return glyphString.length === maxGlyphLength ? glyphString : '';
+  return glyphString.length === exactGlyphLength ? glyphString : '';
 }

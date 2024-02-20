@@ -1,5 +1,7 @@
+import { exactGlyphLength } from '@/constants/restrictions';
+
 export function glyphs2Coords(glyphs: string) {
-  if (glyphs.length !== maxGlyphLength) return '';
+  if (glyphs.length !== exactGlyphLength) return '';
 
   const X_Z_POS_SHIFT = 2049;
   const X_Z_NEG_SHIFT = 2047;
