@@ -22,3 +22,6 @@ jobs:
 
       - name: Test Build
         uses: Lenni009/test-build-vite-action@main
+
+      - name: Run unit tests
+        run: npm run test

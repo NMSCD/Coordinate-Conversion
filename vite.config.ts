@@ -1,5 +1,4 @@
-// vite.config.js
-import path, { resolve } from 'path';
+import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
 import dts from 'vite-plugin-dts';
@@ -14,20 +13,21 @@ export default defineConfig({
   base: './',
   plugins: [
     dts({
+      exclude: ['**/**.spec.**', '*.config.*'],
       insertTypesEntry: true,
     }),
   ],
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: fileURLToPath(new URL('src/index.ts', import.meta.url)),
       name: 'nmscdCoordinateConversion',
       formats: ['es', 'umd'],
     },
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   ...testDef,
