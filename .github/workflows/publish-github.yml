@@ -5,6 +5,8 @@ run-name: Create GitHub Release
 on:
   push:
     branches: ['main']
+    paths:
+      - 'src/**.ts'
 
 concurrency:
   group: 'release'
