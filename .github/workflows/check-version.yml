@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      contents: write
       pull-requests: write
 
     steps:
@@ -28,8 +29,6 @@ jobs:
 
       - name: Checkout Repo
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
 
       - name: Get New Version
         run: |

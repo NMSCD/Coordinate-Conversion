@@ -1,7 +1,7 @@
 {
   "name": "@nmscd/coordinate-conversion",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Library to convert NMS coordinates",
   "main": "./dist/index.js",
@@ -12,7 +12,8 @@
   "scripts": {
     "build": "tsc && vite build",
     "format": "prettier --write src/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:dev": "vitest",
+    "test": "vitest run"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "prettier": "^3.2.5",
     "typescript": "^5.3.3",
     "vite": "^5.1.1",
-    "vite-plugin-dts": "^3.7.2"
+    "vite-plugin-dts": "^3.7.2",
+    "vitest": "^1.3.0"
   }
 }
