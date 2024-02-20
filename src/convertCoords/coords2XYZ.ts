@@ -1,3 +1,4 @@
+import { maxCoordLength } from '@/constants';
 import { glyphs2XYZ } from '../convertGlyphs/glyphs2XYZ';
 import { coords2Glyphs } from './coords2Glyphs';
 

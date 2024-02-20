@@ -1,3 +1,5 @@
+import { maxGlyphLength } from '@/constants';
+
 export function glyphs2Coords(glyphs: string) {
   if (glyphs.length !== maxGlyphLength) return '';
 

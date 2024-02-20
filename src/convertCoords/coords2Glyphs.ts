@@ -1,3 +1,5 @@
+import { maxCoordLength, maxGlyphLength } from '../constants';
+
 export function coords2Glyphs(coords: string): string {
   if (coords.length !== maxCoordLength) return coords;
 
