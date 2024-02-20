@@ -4,6 +4,7 @@ run-name: Check Version
 on:
   pull_request:
     types: [opened, synchronize]
+    branches: main
 
 concurrency:
   group: 'checkversion'
