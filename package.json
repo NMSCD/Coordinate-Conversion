@@ -12,8 +12,9 @@
   "scripts": {
     "build": "tsc && vite build",
     "format": "prettier --write src/",
-    "test:dev": "vitest",
-    "test": "vitest run"
+    "test:dev": "vitest --ui",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,8 @@
   "homepage": "https://github.com/NMSCD/Coordinate-Conversion#readme",
   "devDependencies": {
     "@types/node": "^20.11.19",
+    "@vitest/coverage-v8": "^1.3.1",
+    "@vitest/ui": "^1.3.1",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3",
     "vite": "^5.1.1",

@@ -5,7 +5,7 @@ export const noValidation = <T>(_: T): ValidationResult => ({ isValid: true });
 export const notNull =
   (customErrMsg?: string) =>
   <T>(value: T): ValidationResult => {
-    if (value != null) {
+    if (value !== null) {
       return { isValid: true };
     }
 

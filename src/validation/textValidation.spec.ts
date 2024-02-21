@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { lengthIsEqualTo, maxLength, minLength } from './textValidation';
+import { lengthIsEqualTo, maxLength, minLength, onlyAllowedChars } from './textValidation';
 
 describe('Text Validation', () => {
   describe('minItems', () => {
@@ -74,6 +74,29 @@ describe('Text Validation', () => {
       const text = 'abc';
       const validator = lengthIsEqualTo(1, 5, 7);
       expect(validator(text).isValid).toBeFalsy();
+    });
+  });
+
+  describe('onlyAllowedChars', () => {
+    test('on null', () => {
+      const text: any = null;
+      const validator = onlyAllowedChars('a');
+      expect(validator(text).isValid).toBeTruthy();
+    });
+    test('on empty string', () => {
+      const text = '';
+      const validator = onlyAllowedChars('a');
+      expect(validator(text).isValid).toBeTruthy();
+    });
+    test('with invalid characters', () => {
+      const text = 'testerString';
+      const validator = onlyAllowedChars('b');
+      expect(validator(text).isValid).toBeFalsy();
+    });
+    test('with valid characters', () => {
+      const text = 'abc';
+      const validator = onlyAllowedChars('abcd');
+      expect(validator(text).isValid).toBeTruthy();
     });
   });
 });

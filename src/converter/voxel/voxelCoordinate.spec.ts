@@ -5,7 +5,7 @@ import type { VoxelCoordinates } from '@/types/voxelTypes';
 
 describe('Voxel Coordinate Converter', () => {
   const validCoords: VoxelCoordinates = {
-    voxelX: 1110,
+    voxelX: 110,
     voxelY: 86,
     voxelZ: 291,
     planetIndex: 1,
@@ -20,7 +20,7 @@ describe('Voxel Coordinate Converter', () => {
     test('with valid coordinate', () => {
       const result = VoxelCoordinate(validCoords).toGlyph();
       expect(result.isSuccess).toBeTruthy();
-      expect(result.value.code).toBe('100256123456');
+      expect(result.value.code).toBe('10025612306E');
     });
     test('with invalid coordinate', () => {
       const result = VoxelCoordinate(inValidCoords).toGlyph();
@@ -32,7 +32,7 @@ describe('Voxel Coordinate Converter', () => {
     test('with valid coordinate', () => {
       const result = VoxelCoordinate(validCoords).toGalacticCoordinates();
       expect(result.isSuccess).toBeTruthy();
-      expect(result.value.code).toBe('0C55:00D5:0922:0002');
+      expect(result.value.code).toBe('086D:00D5:0922:0002');
     });
     test('with invalid coordinate', () => {
       const result = VoxelCoordinate(inValidCoords).toGalacticCoordinates();

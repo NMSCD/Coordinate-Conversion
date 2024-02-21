@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>NMSCD - Coordinate Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="./assets/atom-one-dark.min.css" />
+    <link rel="stylesheet" href="./assets/custom.css" />
+    <script type="text/javascript" async src="./assets/highlight.min.js"></script>
+    <script type="text/javascript" async src="https://nmscd.com/Coordinate-Conversion/bundle.js"></script>
+
+    <script>
+        const currentUrl = window.location.href;
+        if (currentUrl.includes('localhost') || currentUrl.includes('file://')) {
+            console.log('Adding local version of library');
+            const script = document.createElement('script');
+            script.setAttribute('src', '../dist/coordinate-conversion.umd.cjs');
+            script.setAttribute('async', true);
+            script.onload = () => {
+            };
+            script.onerror = () => {
+                console.error('error loading coordinate-conversion.umd.cjs for local testing');
+            };
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <script type="text/javascript" async src="../dist/coordinate-conversion.umd.cjs"></script>
+</head>
+
+<body>
+    <header class="container" style="padding-top: 3em">
+        <h1 style="margin: 0">NMSCD - Coordinate Converter</h1>
+        <i>How to use the library in your projects!</i>
+    </header>
+
+    <hr />
+
+    <main class="container" style="padding-bottom: 4em">
+        <section style="margin-bottom: 4em">
+            <h2 class="noselect">Install via npm</h2>
+            <pre><code class="language-bash">npm i @nmscd/coordinate-conversion</code></pre>
+
+            <h5 class="noselect">Using the library</h5>
+            <pre><code class="language-javascript">import { PortalCode } from '@nmscd/coordinate-conversion';
+
+const galacticConversionResult = PortalCode({ code: '023456123456' }).toGalacticCoordinates();
+console.log(galacticConversionResult) // { isSuccess: true, value: '0C55:00D5:0922:0234', errorMessage: '' }</code></pre>
+        </section>
+
+        <section style="margin-bottom: 4em">
+            <h2 class="noselect">Import from CDN</h2>
+            <pre><code class="language-html">&lt;script type="text/javascript" src="https://nmscd.com/Coordinate-Conversion/bundle.js"&gt;&lt;/script&gt;</code></pre>
+
+            <h5 class="noselect">Using the library</h5>
+            <pre><code class="language-javascript">const galacticConversionResult = nmscdCoordinateConversion.PortalCode({ code: '023456123456' }).toGalacticCoordinates();
+console.log(galacticConversionResult) // { isSuccess: true, value: '0C55:00D5:0922:0234', errorMessage: '' }</code></pre>
+        </section>
+
+        <section style="margin-bottom: 4em">
+            <h2 class="noselect">Using the converters</h2>
+            <p class="noselect">Once the library has been imported using one of the methods described above, you will be
+                able to use the functions the library provides.</p>
+            <pre><code class="language-javascript">const galacticConversionResult = PortalCode({ code: '023456123456' }).toGalacticCoordinates();
+if (galacticConversionResult.isSuccess === true) {
+    console.log(galacticConversionResult.value); // 0C55:00D5:0922:0234
+}
+else {
+    console.warn(galacticConversionResult.errorMessage); // e.g. "Invalid portal code provided"
+}</code></pre>
+        </section>
+
+        <section id="examples">
+            <h2 class="noselect">Example conversions</h2>
+
+            <div class="grid conversion-examples" style="margin-top: 2em">
+                <fieldset>
+                    <label>Portal coordinates</label>
+                    <input id="portal" type="text" name="portal" placeholder="023456123456" oninput="onPortalCode()"
+                        value="023456123456" />
+                    <small class="help-text"><i>Valid characters are 0123456789ABCDEF.</i></small>
+                </fieldset>
+                <fieldset>
+                    <label>Galactic coordinates</label>
+                    <article id="portaltoGalacticCoordinates">0C55:00D5:0922:0234</article>
+
+                    <label>Voxel coordinates</label>
+                    <pre id="portaltoVoxel" style="padding: 1em">{}</pre>
+                </fieldset>
+            </div>
+
+            <hr class="hidden-in-desktop" />
+
+            <div class="grid conversion-examples" style="margin-top: 2em">
+                <fieldset>
+                    <label>Galactic coordinates</label>
+                    <input id="galactic" type="text" name="galactic" placeholder="0A32:00D5:0F44:0234"
+                        oninput="onGalacticCoord()" value="0A32:00D5:0F44:0234" />
+                    <small class="help-text"><i>Valid characters are 0123456789ABCDEF with semicolons.</i></small>
+                </fieldset>
+                <fieldset>
+                    <label>Portal coordinates</label>
+                    <article id="galactictoGlyph">023456123456</article>
+
+                    <label>Voxel coordinates</label>
+                    <pre id="galactictoVoxel" style="padding: 1em">{}</pre>
+                </fieldset>
+            </div>
+
+            <hr class="hidden-in-desktop" />
+
+            <div class="grid conversion-examples" style="margin-top: 2em">
+                <fieldset>
+                    <label>Voxel coordinates</label>
+                    <textarea id="voxel" type="text" name="voxel" oninput="onVoxelCoord()" placeholder="tbd"
+                        rows="7"></textarea>
+                    <small class="help-text"><i>This input takes in an object representing a voxel
+                            coordinate.</i></small>
+                </fieldset>
+                <fieldset>
+                    <label>Portal coordinates</label>
+                    <article id="voxeltoGlyph">023456123456</article>
+
+                    <label>Galactic coordinates</label>
+                    <article id="voxeltoGalacticCoordinates">0C55:00D5:0922:0234</article>
+                </fieldset>
+            </div>
+        </section>
+    </main>
+
+    <hr />
+
+    <footer class="container" style="padding-bottom: 2em">
+        <small>
+            <span>NMSCD - <a href="https://github.com/NMSCD/Coordinate-Conversion">Source code</a></span>
+            <span>&nbsp;|&nbsp;</span>
+            <span id="version">Development</span>
+            <span>&nbsp;|&nbsp;</span>
+            <span>Styled with with <a href="https://picocss.com">Pico</a></span>
+        </small>
+    </footer>
+</body>
+<script type="text/javascript" defer src="./assets/custom.js"></script>
+
+</html>

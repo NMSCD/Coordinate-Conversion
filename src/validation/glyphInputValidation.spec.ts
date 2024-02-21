@@ -33,5 +33,10 @@ describe('Glyph Input Validation', () => {
       const result = GlyphCodeInputValidator(code);
       expect(result.isValid).toBeTruthy();
     });
+    test('has invalid characters', () => {
+      const code = '12345test012';
+      const result = GlyphCodeInputValidator(code);
+      expect(result.isValid).toBeFalsy();
+    });
   });
 });

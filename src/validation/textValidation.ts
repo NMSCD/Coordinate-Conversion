@@ -40,3 +40,20 @@ export const lengthIsEqualTo =
       errorMessage: validationMessage.unexpectedValue('Length', valueLength, lengths),
     };
   };
+
+export const onlyAllowedChars =
+  (allowedChars: string, propName?: string) =>
+  (value: string): ValidationResult => {
+    const safeValue = value ?? '';
+    const charArr = allowedChars.split('');
+    for (const char of safeValue) {
+      if (charArr.includes(char) === false) {
+        return {
+          isValid: false,
+          errorMessage: validationMessage.unexpectedValue(propName ?? 'Character', char, charArr),
+        };
+      }
+    }
+
+    return { isValid: true };
+  };

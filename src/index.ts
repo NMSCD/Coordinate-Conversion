@@ -11,6 +11,8 @@ import type { GalacticCodeGroupsInput, GalacticCodeInput, GalacticInput, Galacti
 import type { GlyphInput, GlyphOutput } from './types/glyphTypes';
 import type { VoxelCoordinates, VoxelInput, VoxelOutput } from './types/voxelTypes';
 
+const getPackageVersion = () => PACKAGE_VERSION;
+
 export {
   // Converters
   GalacticCoordinate,
@@ -33,4 +35,6 @@ export {
   type VoxelCoordinates,
   type VoxelInput,
   type VoxelOutput,
+  // misc
+  getPackageVersion,
 };

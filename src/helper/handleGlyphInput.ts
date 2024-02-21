@@ -10,5 +10,5 @@ export const handleGlyphCode = (input: GlyphInput): string => {
     inputCoords = input.numberArray.map((n) => n.toString(16)).join('');
   }
 
-  return inputCoords;
+  return inputCoords?.toLocaleLowerCase?.();
 };

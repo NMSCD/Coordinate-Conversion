@@ -4,12 +4,14 @@ import { validationMessage } from '@/constants/validationMessages';
 import type { GalacticCodeInput, GalacticInput } from '@/types/galacticTypes';
 import type { Validator } from '@/types/validator';
 import { multiValidation, notNull } from './baseValidation';
-import { lengthIsEqualTo } from './textValidation';
+import { lengthIsEqualTo, onlyAllowedChars } from './textValidation';
+import type { ValidationResult } from '@/contracts/validationResult';
 
 export const GalacticCodeInputValidator: Validator<GalacticCodeInput> = (code: GalacticCodeInput) => {
   const validator = multiValidation(
     notNull(validationMessage.cannotBeNull(CoordinateType.GalacticCoordinates.toString())), //
-    lengthIsEqualTo(minGalacticCoordLength, maxGalacticCoordLength)
+    lengthIsEqualTo(minGalacticCoordLength, maxGalacticCoordLength),
+    onlyAllowedChars(':1234567890abcdefABCDEF')
   );
   return validator(code);
 };
@@ -24,6 +26,30 @@ export const GalacticInputValidator: Validator<GalacticInput> = (inputProps: Gal
 
   if (inputProps.code != null) {
     return GalacticCodeInputValidator(inputProps.code);
+  }
+
+  return { isValid: true };
+};
+
+export const galacticCodePattern = (value: string): ValidationResult => {
+  const safeValue = value ?? '';
+  const unexpectedPatternResult = {
+    isValid: false,
+    errorMessage: validationMessage.unexpectedPattern('Galactic', safeValue),
+  };
+
+  if (safeValue.length === minGalacticCoordLength) {
+    if (safeValue.includes(':')) return unexpectedPatternResult;
+    return { isValid: true };
+  }
+
+  if (safeValue.includes(':') == false) return unexpectedPatternResult;
+
+  const semiColonIndexes = [5, 10, 15];
+  for (const semiColonIndex of semiColonIndexes) {
+    if (safeValue.length < semiColonIndex || safeValue[semiColonIndex - 1] !== ':') {
+      return unexpectedPatternResult;
+    }
   }
 
   return { isValid: true };
