@@ -52,9 +52,9 @@ console.log(voxelConversionResult); // { isSuccess: true, value: '023456123456',
 // Example of error in conversion
 const galacticConversionResult = PortalCode({ code: 'tester' }).toGalacticCoordinates();
 console.log(galacticConversionResult); /*
-{ 
-  isSuccess: false, 
-  value: '', 
+{
+  isSuccess: false,
+  value: '',
   errorMessage: 'Character is an unexpected value (t), expected values 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, a, b, c, d, e, f, A, B, C, D, E, F'
 }
 */
@@ -77,6 +77,15 @@ type VoxelCoordinates = {
   planetIndex: number;
 };
 ```
+
+<br />
+
+## Code coverage
+
+### [View our current code coverage report](https://nmscd.com/Coordinate-Conversion/coverage)
+
+<br />
+<br />
 
 <!-- Links used in the page -->
 
