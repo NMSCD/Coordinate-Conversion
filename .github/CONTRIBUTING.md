@@ -28,9 +28,7 @@ to <abuse@nmscd.com>.
 
 ## I Have a Question
 
-Documentation site coming ~soon~ eventually, [probably here](https://nmscd.com/Coordinate-Conversion/)
-
-<!-- > If you want to ask a question, we assume that you have read the available [Documentation](https://nmscd.com/Coordinate-Conversion/). -->
+> If you want to ask a question, we assume that you have read the available [Documentation](https://nmscd.com/Coordinate-Conversion/).
 
 Before you ask a question, it is best to search for existing [Issues](https://github.com/NMSCD/Coordinate-Conversion/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
 

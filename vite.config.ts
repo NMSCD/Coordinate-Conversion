@@ -1,12 +1,22 @@
-// vite.config.js
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
 import dts from 'vite-plugin-dts';
 
+const reporters = ['text', 'html'];
+if (process.env.GITHUB_ACTIONS) {
+  reporters.push('github-actions');
+}
+
 const testDef = {
   test: {
     exclude: [...configDefaults.exclude, './build/**', './dist/**'],
+    coverage: {
+      reporter: reporters,
+      extension: ['.ts'],
+      include: ['src'],
+      exclude: ['src/contracts', 'src/types'],
+    },
   },
 };
 
@@ -18,11 +28,15 @@ export default defineConfig({
       insertTypesEntry: true,
     }),
   ],
+  define: {
+    PACKAGE_VERSION: JSON.stringify(process.env.npm_package_version),
+  },
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: fileURLToPath(new URL('src/index.ts', import.meta.url)),
-      formats: ['es'],
+      name: 'nmscdCoordinateConversion',
+      formats: ['es', 'umd'],
     },
   },
   resolve: {
