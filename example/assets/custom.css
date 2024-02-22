@@ -16,9 +16,19 @@
     text-align: center;
 }
 
+.heading-small {
+    --pico-font-size: 1.125rem;
+    --pico-line-height: 1.225;
+    --pico-typography-spacing-top: 1.6875rem;
+}
+
 fieldset {
     position: relative;
     margin: 0;
+}
+
+textarea {
+    resize: none;
 }
 
 @media (min-width: 768px) {
