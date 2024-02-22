@@ -9,23 +9,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
   <link rel="stylesheet" href="./assets/atom-one-dark.min.css" />
   <link rel="stylesheet" href="./assets/custom.css" />
-  <script type="text/javascript" async src="./assets/highlight.min.js"></script>
-  <script type="text/javascript" async src="https://nmscd.com/Coordinate-Conversion/bundle.js"></script>
+  <script type="text/javascript" defer src="./assets/highlight.min.js"></script>
 
   <script>
+    let coordinateConversionJsFile = 'https://nmscd.com/Coordinate-Conversion/bundle.js';
     const currentUrl = window.location.href;
     if (currentUrl.includes('localhost') || currentUrl.includes('file://')) {
       console.log('Adding local version of library');
-      const script = document.createElement('script');
-      script.setAttribute('src', '../dist/coordinate-conversion.umd.cjs');
-      script.setAttribute('async', true);
-      script.onload = () => {
-      };
-      script.onerror = () => {
-        console.error('error loading coordinate-conversion.umd.cjs for local testing');
-      };
-      document.head.appendChild(script);
+      coordinateConversionJsFile = '../dist/coordinate-conversion.umd.cjs'
     }
+    const script = document.createElement('script');
+    script.setAttribute('src', '');
+    script.setAttribute('defer', true);
+    document.head.appendChild(script);
   </script>
 </head>
 
@@ -139,7 +135,8 @@ else {
       <span>Styled with with <a href="https://picocss.com">Pico</a></span>
     </small>
   </footer>
+
+  <script type="text/javascript" defer src="./assets/custom.js"></script>
 </body>
-<script type="text/javascript" defer src="./assets/custom.js"></script>
 
 </html>
