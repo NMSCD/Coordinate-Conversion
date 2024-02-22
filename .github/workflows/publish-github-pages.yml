@@ -5,9 +5,6 @@ run-name: Publish Github pages
 on:
   push:
     branches: ['main']
-    paths:
-      - 'src/**/*'
-      - '!src/**/*.spec.*'
 
 concurrency:
   group: 'githubpages'
