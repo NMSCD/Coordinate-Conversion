@@ -1,18 +1,14 @@
+/// <reference types="vitest" />
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
 import dts from 'vite-plugin-dts';
 
-const reporters = ['text', 'html'];
-if (process.env.GITHUB_ACTIONS) {
-  reporters.push('github-actions');
-}
-
 const testDef = {
   test: {
     exclude: [...configDefaults.exclude, './build/**', './dist/**'],
     coverage: {
-      reporter: reporters,
+      reporter: ['text', 'html'],
       extension: ['.ts'],
       include: ['src'],
       exclude: ['src/contracts', 'src/types'],
