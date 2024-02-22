@@ -1,2 +1,4 @@
 node_modules
 dist
+/example/assets/coordinate-conversion.umd.cjs
+coverage

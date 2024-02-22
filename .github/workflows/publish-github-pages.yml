@@ -1,6 +1,6 @@
 name: Publish
 
-run-name: Publish NPM Package
+run-name: Publish Github pages
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - '!src/**/*.spec.*'
 
 concurrency:
-  group: 'publish'
+  group: 'ghubpages'
   cancel-in-progress: true
 
 jobs:
@@ -32,7 +32,17 @@ jobs:
           npm ci
           npm run build
 
-      - name: Publish to NPM
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Create code coverage report
+        run: npm run coverage
+
+      - name: Set up example pages
+        run: |
+          cp ./dist/coordinate-conversion.umd.cjs ./example/bundle.js
+          cp -r ./coverage ./example/coverage
+          cd example
+          touch .nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: example

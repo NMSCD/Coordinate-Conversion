@@ -1,4 +1,5 @@
-import type { XYZ } from "../types";
+import { exactGlyphLength } from '@/constants/restrictions';
+import type { VoxelOutput } from '@/types/voxelTypes';
 
 function splitGlyphs(glyphs: string) {
   const x_glyphs = glyphs.substring(9, 12);
@@ -10,8 +11,8 @@ function splitGlyphs(glyphs: string) {
   return [x_glyphs, y_glyphs, z_glyphs, system_idx, planet_idx];
 }
 
-export function glyphs2XYZ(glyphs: string): XYZ | undefined {
-  if (glyphs.length !== maxGlyphLength) return;
+export function glyphs2XYZ(glyphs: string): VoxelOutput {
+  if (glyphs.length !== exactGlyphLength) return {} as VoxelOutput;
 
   const coordinates = splitGlyphs(glyphs);
   const numberCoords = coordinates.map((coordinate) => parseInt(coordinate, 16));
@@ -40,10 +41,10 @@ export function glyphs2XYZ(glyphs: string): XYZ | undefined {
   }
 
   return {
-    VoxelX,
-    VoxelY,
-    VoxelZ,
-    SolarSystemIndex: system_idx,
-    PlanetIndex: planet_idx,
+    voxelX: VoxelX,
+    voxelY: VoxelY,
+    voxelZ: VoxelZ,
+    solarSystemIndex: system_idx,
+    planetIndex: planet_idx,
   };
 }
