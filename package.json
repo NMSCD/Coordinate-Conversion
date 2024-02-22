@@ -1,7 +1,7 @@
 {
   "name": "@nmscd/coordinate-conversion",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.1.0",
   "type": "module",
   "description": "Library to convert NMS coordinates",
   "main": "./dist/index.js",
