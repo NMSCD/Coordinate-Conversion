@@ -13,6 +13,18 @@ Library with conversion functions for NMS coordinates
 
 </div>
 
+## Installation
+
+NPM:
+```sh
+npm i @nmscd/coordinate-conversion
+```
+
+From CDN with `<script>` tag:
+```html
+<script type="text/javascript" src="https://nmscd.com/Coordinate-Conversion/bundle.js"></script>
+```
+
 ## Converters
 
 - PortalCode
