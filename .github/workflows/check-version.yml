@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       code-changed: ${{ steps.filter.outputs.src }}
-      tests-changed: ${{ steps.filter.outputs.tests }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -31,7 +30,7 @@ jobs:
 
   check-version:
     needs: paths-filter
-    if: needs.paths-filter.outputs.code-changed == 'true' && needs.paths-filter.outputs.code-changed.tests == 'false'
+    if: needs.paths-filter.outputs.code-changed == 'true'
     runs-on: ubuntu-latest
 
     permissions:
