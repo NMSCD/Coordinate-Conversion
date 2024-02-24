@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/NMSCD/Coordinate-Conversion/issues"
   },
-  "homepage": "https://github.com/NMSCD/Coordinate-Conversion#readme",
+  "homepage": "https://nmscd.com/Coordinate-Conversion/",
   "devDependencies": {
     "@types/node": "^20.11.19",
     "@vitest/coverage-v8": "^1.3.1",
