@@ -15,22 +15,23 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       code-changed: ${{ steps.filter.outputs.src }}
+      tests-changed: ${{ steps.filter.outputs.tests }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
       - name: Filter Changed Files
-        uses: dorny/paths-filter@v3
+        uses: AurorNZ/paths-filter@v4
         id: filter
         with:
           filters: |
             src:
-              - './src/**/*'
-              - '!./src/**/*.spec.*'
+              - 'src/**/*'
+              - '!src/**/*.spec.*'
 
   check-version:
     needs: paths-filter
-    if: needs.paths-filter.outputs.code-changed == 'true'
+    if: needs.paths-filter.outputs.code-changed == 'true' && needs.paths-filter.outputs.code-changed.tests == 'false'
     runs-on: ubuntu-latest
 
     permissions:
