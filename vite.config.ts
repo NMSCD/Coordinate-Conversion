@@ -11,7 +11,11 @@ const testDef = {
       reporter: ['text', 'html'],
       extension: ['.ts'],
       include: ['src'],
-      exclude: ['src/contracts', 'src/types'],
+      exclude: [
+        'src/contracts',
+        'src/types',
+        'src/vite-env.d.ts'
+      ],
     },
   },
 };

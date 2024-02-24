@@ -1,10 +1,11 @@
 import { baseConverter } from '@/converter/baseConverter';
+import { xyz2Coords } from '@/functions/convertXYZ/xyz2Coords';
+import { xyz2Glyphs } from '@/functions/convertXYZ/xyz2Glyphs';
 import type { IConverterMethods } from '@/types/converter';
 import type { GalacticOutput } from '@/types/galacticTypes';
 import type { GlyphOutput } from '@/types/glyphTypes';
 import type { VoxelInput } from '@/types/voxelTypes';
 import { VoxelInputValidator } from '@/validation/voxelInputValidation';
-import { xyz2Coords, xyz2Glyphs } from '../..';
 
 /**
  * A converter that takes a Voxel coordinate and returns functions to convert to other portal types.

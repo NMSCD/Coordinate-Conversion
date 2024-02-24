@@ -1,11 +1,12 @@
 import { baseConverter } from '@/converter/baseConverter';
+import { glyphs2Coords } from '@/functions/convertGlyphs/glyphs2Coords';
+import { glyphs2XYZ } from '@/functions/convertGlyphs/glyphs2XYZ';
 import { handleGlyphCode } from '@/helper/handleGlyphInput';
 import type { IConverterMethods } from '@/types/converter';
 import type { GalacticInput, GalacticOutput } from '@/types/galacticTypes';
 import type { GlyphInput } from '@/types/glyphTypes';
 import type { VoxelOutput } from '@/types/voxelTypes';
 import { GlyphInputValidator } from '@/validation/glyphInputValidation';
-import { glyphs2Coords, glyphs2XYZ } from '../..';
 
 /**
  * A converter that takes a Portal code and returns functions to convert to other portal types.
