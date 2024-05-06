@@ -6,10 +6,6 @@ on:
     types: [opened, synchronize]
     branches: main
 
-concurrency:
-  group: 'checkversion'
-  cancel-in-progress: true
-
 jobs:
   paths-filter:
     runs-on: ubuntu-latest
