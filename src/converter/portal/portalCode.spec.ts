@@ -9,6 +9,13 @@ describe('Portal Coordinate Converter', () => {
       expect(result.isSuccess).toBeTruthy();
       expect(result.value.code).toBe('0C55:00D5:0922:0234');
     });
+
+    test('with valid coordinate and last expected digit being a character', () => {
+      const result = PortalCode({ code: '405EA21107FF' }).toGalacticCoordinates();
+      expect(result.isSuccess).toBeTruthy();
+      expect(result.value.code).toBe('0FFE:0021:090F:005E');
+    });
+
     test('with invalid coordinate', () => {
       const result = PortalCode({ code: '0000023456123456' }).toGalacticCoordinates();
       expect(result.isSuccess).toBeFalsy();
