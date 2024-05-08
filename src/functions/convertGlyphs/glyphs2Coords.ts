@@ -38,7 +38,7 @@ export function glyphs2Coords(glyphs: string) {
   const coordData = [coords_x, coords_y, coords_z];
   const coordinates = coordData.map((coord) => coord.toString(16).toUpperCase().padStart(4, '0'));
 
-  coordinates[3] = system_idx.padStart(4, '0'); // NoSonar the 4 is to bump it to a length of 4
+  coordinates[3] = system_idx.padStart(4, '0').toUpperCase(); // NoSonar the 4 is to bump it to a length of 4
 
   return coordinates.join(':');
 }
