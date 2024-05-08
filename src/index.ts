@@ -23,6 +23,5 @@ export {
   type GlyphOutput,
   type VoxelCoordinates,
   type VoxelInput,
-  type VoxelOutput
+  type VoxelOutput,
 };
-

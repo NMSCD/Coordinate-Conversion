@@ -10,11 +10,11 @@ describe('Galactic to XYZ', () => {
     });
     test('output is the correct format', () => {
       const coords = coords2XYZ('0C55:00D5:0922:0234');
-      expect(coords!.voxelX).toBe(1110);
-      expect(coords!.voxelY).toBe(86);
-      expect(coords!.voxelZ).toBe(291);
-      expect(coords!.planetIndex).toBe(0);
-      expect(coords!.solarSystemIndex).toBe(564);
+      expect(coords.voxelX).toBe(1110);
+      expect(coords.voxelY).toBe(86);
+      expect(coords.voxelZ).toBe(291);
+      expect(coords.planetIndex).toBe(0);
+      expect(coords.solarSystemIndex).toBe(564);
     });
     test('invalid input', () => {
       const coords = coords2XYZ('00000C55:00D5:0922:0234');
