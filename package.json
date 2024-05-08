@@ -1,10 +1,10 @@
 {
   "name": "@nmscd/coordinate-conversion",
   "private": false,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "description": "Library to convert NMS coordinates",
-  "main": "./dist/index.js",
+  "main": "./dist/coordinate-conversion.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
