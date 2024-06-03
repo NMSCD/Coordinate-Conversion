@@ -9,7 +9,7 @@ describe('Voxel Coordinate Converter', () => {
     VoxelY: 86,
     VoxelZ: 291,
     PlanetIndex: 1,
-    SolarSystemIndex: 2,
+    SolarSystemIndex: 212,
   };
   const inValidCoords: VoxelCoordinates = {
     ...validCoords,
@@ -20,7 +20,7 @@ describe('Voxel Coordinate Converter', () => {
     test('with valid coordinate', () => {
       const result = VoxelCoordinate(validCoords).toGlyph();
       expect(result.isSuccess).toBeTruthy();
-      expect(result.value.code).toBe('10025612306E');
+      expect(result.value.code).toBe('10D45612306E');
     });
     test('with invalid coordinate', () => {
       const result = VoxelCoordinate(inValidCoords).toGlyph();
@@ -32,7 +32,7 @@ describe('Voxel Coordinate Converter', () => {
     test('with valid coordinate', () => {
       const result = VoxelCoordinate(validCoords).toGalacticCoordinates();
       expect(result.isSuccess).toBeTruthy();
-      expect(result.value.code).toBe('086D:00D5:0922:0002');
+      expect(result.value.code).toBe('086D:00D5:0922:00D4');
     });
     test('with invalid coordinate', () => {
       const result = VoxelCoordinate(inValidCoords).toGalacticCoordinates();
