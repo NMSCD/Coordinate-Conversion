@@ -20,25 +20,25 @@ export const VoxelInputValidator: Validator<VoxelInput> = (inputProps: VoxelInpu
   }
 
   const validations: Array<() => ValidationResult> = [
-    () => notNull(validationMessage.cannotBeNull('voxelX'))(inputProps.voxelX),
-    () => minValue(voxelMin, 'voxelX')(inputProps.voxelX),
-    () => maxValue(voxelMax, 'voxelX')(inputProps.voxelX),
+    () => notNull(validationMessage.cannotBeNull('VoxelX'))(inputProps.VoxelX),
+    () => minValue(voxelMin, 'VoxelX')(inputProps.VoxelX),
+    () => maxValue(voxelMax, 'VoxelX')(inputProps.VoxelX),
     //
-    () => notNull(validationMessage.cannotBeNull('voxelY'))(inputProps.voxelY),
-    () => minValue(voxelMin, 'voxelY')(inputProps.voxelY),
-    () => maxValue(voxelMax, 'voxelY')(inputProps.voxelY),
+    () => notNull(validationMessage.cannotBeNull('VoxelY'))(inputProps.VoxelY),
+    () => minValue(voxelMin, 'VoxelY')(inputProps.VoxelY),
+    () => maxValue(voxelMax, 'VoxelY')(inputProps.VoxelY),
     //
-    () => notNull(validationMessage.cannotBeNull('voxelZ'))(inputProps.voxelZ),
-    () => minValue(voxelMin, 'voxelZ')(inputProps.voxelZ),
-    () => maxValue(voxelMax, 'voxelZ')(inputProps.voxelZ),
+    () => notNull(validationMessage.cannotBeNull('VoxelZ'))(inputProps.VoxelZ),
+    () => minValue(voxelMin, 'VoxelZ')(inputProps.VoxelZ),
+    () => maxValue(voxelMax, 'VoxelZ')(inputProps.VoxelZ),
     //
-    () => notNull(validationMessage.cannotBeNull('solarSystemIndex'))(inputProps.solarSystemIndex),
-    () => minValue(solarSystemIndexMin, 'solarSystemIndex')(inputProps.solarSystemIndex),
-    () => maxValue(solarSystemIndexMax, 'solarSystemIndex')(inputProps.solarSystemIndex),
+    () => notNull(validationMessage.cannotBeNull('SolarSystemIndex'))(inputProps.SolarSystemIndex),
+    () => minValue(solarSystemIndexMin, 'SolarSystemIndex')(inputProps.SolarSystemIndex),
+    () => maxValue(solarSystemIndexMax, 'SolarSystemIndex')(inputProps.SolarSystemIndex),
     //
-    () => notNull(validationMessage.cannotBeNull('planetIndex'))(inputProps.planetIndex),
-    () => minValue(planetIndexMin, 'planetIndex')(inputProps.planetIndex),
-    () => maxValue(planetIndexMax, 'planetIndex')(inputProps.planetIndex),
+    () => notNull(validationMessage.cannotBeNull('PlanetIndex'))(inputProps.PlanetIndex),
+    () => minValue(planetIndexMin, 'PlanetIndex')(inputProps.PlanetIndex),
+    () => maxValue(planetIndexMax, 'PlanetIndex')(inputProps.PlanetIndex),
   ];
   for (const validation of validations) {
     const result = validation();

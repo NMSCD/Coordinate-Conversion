@@ -12,16 +12,22 @@
   <script type="text/javascript" defer src="./assets/highlight.min.js"></script>
 
   <script>
-    let coordinateConversionJsFile = 'https://nmscd.com/Coordinate-Conversion/bundle.js';
-    const currentUrl = window.location.href;
-    if (currentUrl.includes('localhost') || currentUrl.includes('file://')) {
+    let coordinateConversionJsFile = './assets/bundle.js';
+    const localHosts = ['127.0.0.1', 'localhost'];
+    if (localHosts.includes(location.hostname) || window.location.protocol === 'file:') {
       console.log('Adding local version of library');
       coordinateConversionJsFile = '../dist/coordinate-conversion.umd.cjs'
     }
     const script = document.createElement('script');
-    script.setAttribute('src', '');
-    script.setAttribute('defer', true);
+    script.src = coordinateConversionJsFile;
+    script.defer = true;
     document.head.appendChild(script);
+
+    const customScript = document.createElement('script');
+    customScript.src = './assets/custom.js';
+    customScript.defer = true;
+
+    script.onload = () => document.head.appendChild(customScript);
   </script>
 </head>
 
@@ -141,8 +147,6 @@ else {
       <span>Styled with with <a href="https://picocss.com">Pico</a></span>
     </small>
   </footer>
-
-  <script type="text/javascript" defer src="./assets/custom.js"></script>
 </body>
 
 </html>

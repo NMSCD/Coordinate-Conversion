@@ -5,15 +5,15 @@ import type { VoxelCoordinates } from '@/types/voxelTypes';
 
 describe('Voxel Coordinate Converter', () => {
   const validCoords: VoxelCoordinates = {
-    voxelX: 110,
-    voxelY: 86,
-    voxelZ: 291,
-    planetIndex: 1,
-    solarSystemIndex: 2,
+    VoxelX: 110,
+    VoxelY: 86,
+    VoxelZ: 291,
+    PlanetIndex: 1,
+    SolarSystemIndex: 2,
   };
   const inValidCoords: VoxelCoordinates = {
     ...validCoords,
-    voxelX: 10000000,
+    VoxelX: 10000000,
   };
 
   describe('toGlyph', () => {

@@ -1,11 +1,11 @@
 import type { VoxelCoordinates } from '@/types/voxelTypes';
 
 export function xyz2Glyphs({
-  voxelX: VoxelX,
-  voxelY: VoxelY,
-  voxelZ: VoxelZ,
-  solarSystemIndex: SolarSystemIndex,
-  planetIndex: PlanetIndex,
+  VoxelX,
+  VoxelY,
+  VoxelZ,
+  SolarSystemIndex,
+  PlanetIndex,
 }: VoxelCoordinates): string {
   let x_glyphs, y_glyphs, z_glyphs;
   if (VoxelX < 0) {

@@ -1,7 +1,7 @@
 
 hljs.highlightAll();
 
-const voxelObj = { "voxelX": 563, "voxelY": 86, "voxelZ": 181, "solarSystemIndex": 5, "planetIndex": 1 };
+const voxelObj = { "VoxelX": 563, "VoxelY": 86, "VoxelZ": 181, "SolarSystemIndex": 5, "PlanetIndex": 1 };
 const voxelString = JSON.stringify(voxelObj, null, ' ');
 
 const portalToVoxElem = document.getElementById('portaltoVoxel');

@@ -7,11 +7,11 @@ import { xyz2Coords } from './xyz2Coords';
 describe('XYZ to Galactic', () => {
   describe('output', () => {
     const xyz: VoxelCoordinates = {
-      voxelX: 1110,
-      voxelY: 86,
-      voxelZ: 291,
-      planetIndex: 0,
-      solarSystemIndex: 564,
+      VoxelX: 1110,
+      VoxelY: 86,
+      VoxelZ: 291,
+      PlanetIndex: 0,
+      SolarSystemIndex: 564,
     };
     test(`output is exactly ${maxGalacticCoordLength} chars`, () => {
       const coords = xyz2Coords(xyz);
@@ -36,11 +36,11 @@ describe('XYZ to Galactic', () => {
       [72, 4, -2013, 0, 2083, '0847:0083:0022:0823'],
     ])('convert { x:%s, y:%s, z:%s, pi:%s, ssi:%s } to coords', (x, y, z, pi, ssi, gc) => {
       const xyz: VoxelCoordinates = {
-        voxelX: x,
-        voxelY: y,
-        voxelZ: z,
-        planetIndex: pi,
-        solarSystemIndex: ssi,
+        VoxelX: x,
+        VoxelY: y,
+        VoxelZ: z,
+        PlanetIndex: pi,
+        SolarSystemIndex: ssi,
       };
       const coords = xyz2Coords(xyz);
       expect(coords).toBe(gc);

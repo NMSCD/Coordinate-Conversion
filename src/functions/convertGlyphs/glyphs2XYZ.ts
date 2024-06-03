@@ -41,10 +41,10 @@ export function glyphs2XYZ(glyphs: string): VoxelOutput {
   }
 
   return {
-    voxelX: VoxelX,
-    voxelY: VoxelY,
-    voxelZ: VoxelZ,
-    solarSystemIndex: system_idx,
-    planetIndex: planet_idx,
+    VoxelX: VoxelX,
+    VoxelY: VoxelY,
+    VoxelZ: VoxelZ,
+    SolarSystemIndex: system_idx,
+    PlanetIndex: planet_idx,
   };
 }

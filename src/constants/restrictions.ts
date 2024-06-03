@@ -6,7 +6,7 @@ export const voxelMin = -768;
 export const voxelMax = 768;
 
 export const solarSystemIndexMin = 1;
-export const solarSystemIndexMax = 15;
+export const solarSystemIndexMax = 4095;
 
 export const planetIndexMin = 1;
 export const planetIndexMax = 15;

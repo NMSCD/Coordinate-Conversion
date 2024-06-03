@@ -82,11 +82,11 @@ console.log(galacticConversionResult); /*
 import type { VoxelCoordinates } from '@nmscd/coordinate-conversion';
 
 type VoxelCoordinates = {
-  voxelX: number;
-  voxelY: number;
-  voxelZ: number;
-  solarSystemIndex: number;
-  planetIndex: number;
+  VoxelX: number;
+  VoxelY: number;
+  VoxelZ: number;
+  SolarSystemIndex: number;
+  PlanetIndex: number;
 };
 ```
 
