@@ -2,8 +2,8 @@ export const maxGalacticCoordLength = 19;
 export const minGalacticCoordLength = 16;
 export const exactGlyphLength = 12;
 
-export const voxelMin = -768;
-export const voxelMax = 768;
+export const voxelMin = -2048;
+export const voxelMax = 2048;
 
 export const solarSystemIndexMin = 1;
 export const solarSystemIndexMax = 4095;
