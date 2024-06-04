@@ -19,24 +19,24 @@ describe('Voxel Coordinate Converter', () => {
   describe('toGlyph', () => {
     test('with valid coordinate', () => {
       const result = VoxelCoordinate(validCoords).toGlyph();
-      expect(result.isSuccess).toBeTruthy();
+      expect(result.isSuccess, result.errorMessage).toBeTruthy();
       expect(result.value.code).toBe('10E4030C590B');
     });
     test('with invalid coordinate', () => {
       const result = VoxelCoordinate(inValidCoords).toGlyph();
-      expect(result.isSuccess).toBeFalsy();
+      expect(result.isSuccess, result.errorMessage).toBeFalsy();
     });
   });
 
   describe('toGalacticCoordinates', () => {
     test('with valid coordinate', () => {
       const result = VoxelCoordinate(validCoords).toGalacticCoordinates();
-      expect(result.isSuccess).toBeTruthy();
+      expect(result.isSuccess, result.errorMessage).toBeTruthy();
       expect(result.value.code).toBe('010A:0082:08C4:00E4');
     });
     test('with invalid coordinate', () => {
       const result = VoxelCoordinate(inValidCoords).toGalacticCoordinates();
-      expect(result.isSuccess).toBeFalsy();
+      expect(result.isSuccess, result.errorMessage).toBeFalsy();
     });
   });
 });

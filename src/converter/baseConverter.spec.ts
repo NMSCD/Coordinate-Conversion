@@ -37,7 +37,7 @@ describe('Base Converter', () => {
 
     test('should return an error result', () => {
       const result = fakeConverter();
-      expect(result.isSuccess).toBeFalsy();
+      expect(result.isSuccess, result.errorMessage).toBeFalsy();
     });
   });
 
@@ -63,7 +63,7 @@ describe('Base Converter', () => {
         inputValidator: (_) => vi.fn().mockReturnValue({ isValid: true })(),
       });
       const result = fakeConverterWithBadConversion();
-      expect(result.isSuccess).toBeFalsy();
+      expect(result.isSuccess, result.errorMessage).toBeFalsy();
     });
   });
 });
