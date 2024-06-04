@@ -8,5 +8,5 @@ export const voxelMax = 2048;
 export const solarSystemIndexMin = 1;
 export const solarSystemIndexMax = 4095;
 
-export const planetIndexMin = 1;
+export const planetIndexMin = 0;
 export const planetIndexMax = 15;
