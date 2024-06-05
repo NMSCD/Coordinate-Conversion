@@ -6,11 +6,11 @@ import type { VoxelCoordinates } from '@/types/voxelTypes';
 describe('XYZ to Glyphs', () => {
   describe('output', () => {
     const xyz: VoxelCoordinates = {
-      voxelX: 1110,
-      voxelY: 86,
-      voxelZ: 291,
-      planetIndex: 0,
-      solarSystemIndex: 564,
+      VoxelX: 1110,
+      VoxelY: 86,
+      VoxelZ: 291,
+      PlanetIndex: 0,
+      SolarSystemIndex: 564,
     };
     test('output is exactly 12 chars', () => {
       const coords = xyz2Glyphs(xyz);
@@ -32,11 +32,11 @@ describe('XYZ to Glyphs', () => {
       [72, 4, -2013, 0, 2083, '082304823048'],
     ])('convert { x:%s, y:%s, z:%s, pi:%s, ssi:%s } to glyphs', (x, y, z, pi, ssi, g) => {
       const xyz: VoxelCoordinates = {
-        voxelX: x,
-        voxelY: y,
-        voxelZ: z,
-        planetIndex: pi,
-        solarSystemIndex: ssi,
+        VoxelX: x,
+        VoxelY: y,
+        VoxelZ: z,
+        PlanetIndex: pi,
+        SolarSystemIndex: ssi,
       };
       const coords = xyz2Glyphs(xyz);
       expect(coords).toBe(g);

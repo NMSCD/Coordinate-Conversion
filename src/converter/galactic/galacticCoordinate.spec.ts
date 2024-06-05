@@ -6,26 +6,26 @@ describe('Galactic Coordinate Converter', () => {
   describe('toGlyph', () => {
     test('with valid coordinate', () => {
       const result = GalacticCoordinate({ code: '0C55:00D5:0922:0234' }).toGlyph();
-      expect(result.isSuccess).toBeTruthy();
+      expect(result.isSuccess, result.errorMessage).toBeTruthy();
       expect(result.value.code).toBe('023456123456');
     });
     test('with invalid coordinate', () => {
       const result = GalacticCoordinate({ code: '0000C55:00D5:0922:0234' }).toGlyph();
-      expect(result.isSuccess).toBeFalsy();
+      expect(result.isSuccess, result.errorMessage).toBeFalsy();
     });
   });
 
   describe('toVoxel', () => {
     test('with valid coordinate', () => {
       const result = GalacticCoordinate({ code: '0C55:00D5:0922:0234' }).toVoxel();
-      expect(result.isSuccess).toBeTruthy();
-      expect(result.value.voxelX).toBe(1110);
-      expect(result.value.voxelY).toBe(86);
-      expect(result.value.voxelZ).toBe(291);
+      expect(result.isSuccess, result.errorMessage).toBeTruthy();
+      expect(result.value.VoxelX).toBe(1110);
+      expect(result.value.VoxelY).toBe(86);
+      expect(result.value.VoxelZ).toBe(291);
     });
     test('with invalid coordinate', () => {
       const result = GalacticCoordinate({ code: '0000C55:00D5:0922:0234' }).toVoxel();
-      expect(result.isSuccess).toBeFalsy();
+      expect(result.isSuccess, result.errorMessage).toBeFalsy();
     });
   });
 });

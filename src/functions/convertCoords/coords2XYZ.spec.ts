@@ -10,11 +10,11 @@ describe('Galactic to XYZ', () => {
     });
     test('output is the correct format', () => {
       const coords = coords2XYZ('0C55:00D5:0922:0234');
-      expect(coords.voxelX).toBe(1110);
-      expect(coords.voxelY).toBe(86);
-      expect(coords.voxelZ).toBe(291);
-      expect(coords.planetIndex).toBe(0);
-      expect(coords.solarSystemIndex).toBe(564);
+      expect(coords.VoxelX).toBe(1110);
+      expect(coords.VoxelY).toBe(86);
+      expect(coords.VoxelZ).toBe(291);
+      expect(coords.PlanetIndex).toBe(0);
+      expect(coords.SolarSystemIndex).toBe(564);
     });
     test('invalid input', () => {
       const coords = coords2XYZ('00000C55:00D5:0922:0234');
@@ -29,11 +29,11 @@ describe('Galactic to XYZ', () => {
       ['0847:0083:0022:0823', 72, 4, -2013, 0, 2083],
     ])('convert %s to XYZ', (c, x, y, z, pi, ssi) => {
       const coords = coords2XYZ(c);
-      expect(coords!.voxelX).toBe(x);
-      expect(coords!.voxelY).toBe(y);
-      expect(coords!.voxelZ).toBe(z);
-      expect(coords!.planetIndex).toBe(pi);
-      expect(coords!.solarSystemIndex).toBe(ssi);
+      expect(coords!.VoxelX).toBe(x);
+      expect(coords!.VoxelY).toBe(y);
+      expect(coords!.VoxelZ).toBe(z);
+      expect(coords!.PlanetIndex).toBe(pi);
+      expect(coords!.SolarSystemIndex).toBe(ssi);
     });
   });
 });

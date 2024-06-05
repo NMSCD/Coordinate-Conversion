@@ -1,9 +1,9 @@
 export type VoxelCoordinates = {
-  voxelX: number;
-  voxelY: number;
-  voxelZ: number;
-  solarSystemIndex: number;
-  planetIndex: number;
+  VoxelX: number;
+  VoxelY: number;
+  VoxelZ: number;
+  SolarSystemIndex: number;
+  PlanetIndex: number;
 };
 
 export type VoxelInput = VoxelCoordinates;

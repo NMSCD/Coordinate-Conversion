@@ -5,38 +5,38 @@ import type { VoxelCoordinates } from '@/types/voxelTypes';
 
 describe('Voxel Coordinate Converter', () => {
   const validCoords: VoxelCoordinates = {
-    voxelX: 110,
-    voxelY: 86,
-    voxelZ: 291,
-    planetIndex: 1,
-    solarSystemIndex: 2,
+    VoxelX: -1781,
+    VoxelY: 3,
+    VoxelZ: 197,
+    PlanetIndex: 1,
+    SolarSystemIndex: 228,
   };
   const inValidCoords: VoxelCoordinates = {
     ...validCoords,
-    voxelX: 10000000,
+    VoxelX: 10000000,
   };
 
   describe('toGlyph', () => {
     test('with valid coordinate', () => {
       const result = VoxelCoordinate(validCoords).toGlyph();
-      expect(result.isSuccess).toBeTruthy();
-      expect(result.value.code).toBe('10025612306E');
+      expect(result.isSuccess, result.errorMessage).toBeTruthy();
+      expect(result.value.code).toBe('10E4030C590B');
     });
     test('with invalid coordinate', () => {
       const result = VoxelCoordinate(inValidCoords).toGlyph();
-      expect(result.isSuccess).toBeFalsy();
+      expect(result.isSuccess, result.errorMessage).toBeFalsy();
     });
   });
 
   describe('toGalacticCoordinates', () => {
     test('with valid coordinate', () => {
       const result = VoxelCoordinate(validCoords).toGalacticCoordinates();
-      expect(result.isSuccess).toBeTruthy();
-      expect(result.value.code).toBe('086D:00D5:0922:0002');
+      expect(result.isSuccess, result.errorMessage).toBeTruthy();
+      expect(result.value.code).toBe('010A:0082:08C4:00E4');
     });
     test('with invalid coordinate', () => {
       const result = VoxelCoordinate(inValidCoords).toGalacticCoordinates();
-      expect(result.isSuccess).toBeFalsy();
+      expect(result.isSuccess, result.errorMessage).toBeFalsy();
     });
   });
 });

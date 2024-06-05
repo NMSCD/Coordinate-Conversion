@@ -13,58 +13,58 @@ import {
 
 describe('Voxel Validation', () => {
   const baseCoords: VoxelCoordinates = {
-    voxelX: 1110,
-    voxelY: 86,
-    voxelZ: 291,
-    planetIndex: 0,
-    solarSystemIndex: 564,
+    VoxelX: 1110,
+    VoxelY: 86,
+    VoxelZ: 291,
+    PlanetIndex: 0,
+    SolarSystemIndex: 564,
   };
   test('on null', () => {
     const coords: any = null;
     expect(VoxelInputValidator(coords).isValid).toBeFalsy();
   });
-  test('on too small voxelX coordinate', () => {
-    const coords = { ...baseCoords, voxelX: voxelMin - 1 };
+  test('on too small VoxelX coordinate', () => {
+    const coords = { ...baseCoords, VoxelX: voxelMin - 1 };
     expect(VoxelInputValidator(coords).isValid).toBeFalsy();
   });
-  test('on too big voxelX coordinate', () => {
-    const coords = { ...baseCoords, voxelX: voxelMax + 1 };
-    expect(VoxelInputValidator(coords).isValid).toBeFalsy();
-  });
-
-  test('on too small voxelY coordinate', () => {
-    const coords = { ...baseCoords, voxelY: voxelMin - 1 };
-    expect(VoxelInputValidator(coords).isValid).toBeFalsy();
-  });
-  test('on too big voxelY coordinate', () => {
-    const coords = { ...baseCoords, voxelY: voxelMax + 1 };
+  test('on too big VoxelX coordinate', () => {
+    const coords = { ...baseCoords, VoxelX: voxelMax + 1 };
     expect(VoxelInputValidator(coords).isValid).toBeFalsy();
   });
 
-  test('on too small voxelZ coordinate', () => {
-    const coords = { ...baseCoords, voxelZ: voxelMin - 1 };
+  test('on too small VoxelY coordinate', () => {
+    const coords = { ...baseCoords, VoxelY: voxelMin - 1 };
     expect(VoxelInputValidator(coords).isValid).toBeFalsy();
   });
-  test('on too big voxelZ coordinate', () => {
-    const coords = { ...baseCoords, voxelZ: voxelMax + 1 };
-    expect(VoxelInputValidator(coords).isValid).toBeFalsy();
-  });
-
-  test('on too small planetIndex coordinate', () => {
-    const coords = { ...baseCoords, planetIndex: planetIndexMin - 1 };
-    expect(VoxelInputValidator(coords).isValid).toBeFalsy();
-  });
-  test('on too big planetIndex coordinate', () => {
-    const coords = { ...baseCoords, planetIndex: planetIndexMax + 1 };
+  test('on too big VoxelY coordinate', () => {
+    const coords = { ...baseCoords, VoxelY: voxelMax + 1 };
     expect(VoxelInputValidator(coords).isValid).toBeFalsy();
   });
 
-  test('on too small solarSystemIndex coordinate', () => {
-    const coords = { ...baseCoords, solarSystemIndex: solarSystemIndexMin - 1 };
+  test('on too small VoxelZ coordinate', () => {
+    const coords = { ...baseCoords, VoxelZ: voxelMin - 1 };
     expect(VoxelInputValidator(coords).isValid).toBeFalsy();
   });
-  test('on too big solarSystemIndex coordinate', () => {
-    const coords = { ...baseCoords, solarSystemIndex: solarSystemIndexMax + 1 };
+  test('on too big VoxelZ coordinate', () => {
+    const coords = { ...baseCoords, VoxelZ: voxelMax + 1 };
+    expect(VoxelInputValidator(coords).isValid).toBeFalsy();
+  });
+
+  test('on too small PlanetIndex coordinate', () => {
+    const coords = { ...baseCoords, PlanetIndex: planetIndexMin - 1 };
+    expect(VoxelInputValidator(coords).isValid).toBeFalsy();
+  });
+  test('on too big PlanetIndex coordinate', () => {
+    const coords = { ...baseCoords, PlanetIndex: planetIndexMax + 1 };
+    expect(VoxelInputValidator(coords).isValid).toBeFalsy();
+  });
+
+  test('on too small SolarSystemIndex coordinate', () => {
+    const coords = { ...baseCoords, SolarSystemIndex: solarSystemIndexMin - 1 };
+    expect(VoxelInputValidator(coords).isValid).toBeFalsy();
+  });
+  test('on too big SolarSystemIndex coordinate', () => {
+    const coords = { ...baseCoords, SolarSystemIndex: solarSystemIndexMax + 1 };
     expect(VoxelInputValidator(coords).isValid).toBeFalsy();
   });
 });

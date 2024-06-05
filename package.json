@@ -1,7 +1,7 @@
 {
   "name": "@nmscd/coordinate-conversion",
   "private": false,
-  "version": "1.2.2",
+  "version": "1.2.3",
   "type": "module",
   "description": "Library to convert NMS coordinates",
   "main": "./dist/coordinate-conversion.js",
@@ -32,10 +32,10 @@
   },
   "homepage": "https://nmscd.com/Coordinate-Conversion/",
   "devDependencies": {
-    "@types/node": "^20.11.19",
+    "@types/node": "^20.14.2",
     "@vitest/coverage-v8": "^1.3.1",
     "@vitest/ui": "^1.3.1",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.1",
     "typescript": "^5.3.3",
     "vite": "^5.1.1",
     "vite-plugin-dts": "^3.7.2",
