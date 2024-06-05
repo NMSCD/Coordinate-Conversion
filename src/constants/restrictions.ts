@@ -5,7 +5,7 @@ export const exactGlyphLength = 12;
 export const voxelMin = -2048;
 export const voxelMax = 2048;
 
-export const solarSystemIndexMin = 1;
+export const solarSystemIndexMin = 0;
 export const solarSystemIndexMax = 4095;
 
 export const planetIndexMin = 0;
