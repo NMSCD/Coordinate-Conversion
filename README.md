@@ -56,7 +56,7 @@ The conversions will return an object to indicate whether the conversion was suc
 
 ```ts
 const galacticConversionResult = PortalCode({ code: '023456123456' }).toGalacticCoordinates();
-console.log(galacticConversionResult); // { isSuccess: true, value: '0C55:00D5:0922:0234', errorMessage: ''
+console.log(galacticConversionResult); // { isSuccess: true, value: { 'code': '0C55:00D5:0922:0234', 'groups': ['0C55', '00D5', '0922', '0234'] }, errorMessage: ''
 
 const voxelConversionResult = GalacticCoordinate({ code: '0C55:00D5:0922:0234' }).toGlyph();
 console.log(voxelConversionResult); // { isSuccess: true, value: '023456123456', errorMessage: ''
