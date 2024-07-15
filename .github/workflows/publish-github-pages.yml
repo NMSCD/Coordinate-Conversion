@@ -28,7 +28,7 @@ jobs:
 
       - name: Set up example pages
         run: |
-          cp ./dist/coordinate-conversion.umd.cjs ./example/bundle.js
+          cp ./dist/coordinate-conversion.umd.cjs ./example/assets/bundle.js
           cp -r ./coverage ./example/coverage
           cd example
           touch .nojekyll
