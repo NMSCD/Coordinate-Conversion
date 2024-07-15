@@ -10,7 +10,7 @@ import { GalacticInputValidator } from '@/validation/galacticInputValidation';
 
 /**
  * A converter that takes a Galactic coordinate and returns functions to convert to other portal types.
- * @param input multiple ways to input Galactic coordinates
+ * @param input multiple ways to input Galactic coordinates, see {@link GalacticInput| GalacticInput}
  * @returns functions defined in {@link IConverterMethods| IConverterMethods}
  */
 export const GalacticCoordinate = (input: GalacticInput): Omit<IConverterMethods, 'toGalacticCoordinates'> => ({

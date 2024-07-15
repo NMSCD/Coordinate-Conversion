@@ -51,7 +51,8 @@
       <pre><code class="language-javascript">import { PortalCode } from '@nmscd/coordinate-conversion';
 
 const galacticConversionResult = PortalCode({ code: '023456123456' }).toGalacticCoordinates();
-console.log(galacticConversionResult) // { isSuccess: true, value: '0C55:00D5:0922:0234', errorMessage: '' }</code></pre>
+console.log(galacticConversionResult.isSuccess) // true
+console.log(galacticConversionResult.value) // { "code": "0C55:00D5:0922:0234", "groups": ["0C55", "00D5", "0922", "0234"] }</code></pre>
     </section>
 
     <section style="margin-bottom: 4em">
@@ -69,7 +70,7 @@ console.log(galacticConversionResult) // { isSuccess: true, value: '0C55:00D5:09
         able to use the functions the library provides.</p>
       <pre><code class="language-javascript">const galacticConversionResult = PortalCode({ code: '023456123456' }).toGalacticCoordinates();
 if (galacticConversionResult.isSuccess === true) {
-    console.log(galacticConversionResult.value); // 0C55:00D5:0922:0234
+    console.log(galacticConversionResult.value.code); // 0C55:00D5:0922:0234
 }
 else {
     console.warn(galacticConversionResult.errorMessage); // e.g. "Invalid portal code provided"
