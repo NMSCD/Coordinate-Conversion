@@ -10,7 +10,7 @@ import { GlyphInputValidator } from '@/validation/glyphInputValidation';
 
 /**
  * A converter that takes a Portal code and returns functions to convert to other portal types.
- * @param input multiple ways to input Portal code
+ * @param input multiple ways to input Portal code, see {@link GlyphInput| GlyphInput}
  * @returns functions defined in {@link IConverterMethods| IConverterMethods}
  */
 export const PortalCode = (input: GlyphInput): Omit<IConverterMethods, 'toGlyph'> => ({

@@ -20,6 +20,12 @@ describe('Portal Coordinate Converter', () => {
       const result = PortalCode({ code: '0000023456123456' }).toGalacticCoordinates();
       expect(result.isSuccess, result.errorMessage).toBeFalsy();
     });
+
+    test('documentation test', () => {
+      const result = PortalCode({ code: '023456123456' }).toGalacticCoordinates();
+      expect(result.isSuccess, result.errorMessage).toBeTruthy();
+      expect(result.value.code).toBe('0C55:00D5:0922:0234');
+    });
   });
 
   describe('toVoxel', () => {
