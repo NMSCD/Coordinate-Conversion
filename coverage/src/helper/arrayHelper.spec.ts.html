@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/helper/handleGalacticInput.ts</title>
+    <title>Code coverage report for src/helper/arrayHelper.spec.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/helper</a> handleGalacticInput.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/helper</a> arrayHelper.spec.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>23/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>23/23</span>
             </div>
         
             
@@ -83,46 +83,61 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { maxGalacticCoordLength, minGalacticCoordLength } from '@/constants/restrictions';
-import type { GalacticInput } from '@/types/galacticTypes';
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { test, describe, expect } from 'vitest';
 &nbsp;
-export const handleGalacticCoordinate = (input: GalacticInput): string =&gt; {
-  let inputCoords = '';
-  if (input.code != null) {
-    if (input.code.length === maxGalacticCoordLength) {
-      inputCoords = input.code;
-    } else if (input.code.length === minGalacticCoordLength) {
-      inputCoords = input.code
-        .split('') // convert 0C5500D509220234 to 0C55:00D5:0922:0234
-        .flatMap((c, idx) =&gt; (idx !== minGalacticCoordLength - 1 &amp;&amp; idx % 4 === 3 ? [c, ':'] : [c]))
-        .join('');
-    }
-  } else if (input.groups != null) {
-    inputCoords = input.groups.join(':');
-  }
+import { makeArrayOrDefault } from './arrayHelper';
 &nbsp;
-  return inputCoords;
-};
+describe('Helper tests', () =&gt; {
+  describe('Make array or default', () =&gt; {
+    test('makeArrayOrDefault on undefined', () =&gt; {
+      const arr: any = undefined;
+      const arrVal = makeArrayOrDefault(arr);
+      expect(Array.isArray(arrVal)).toBeTruthy();
+    });
+    test('makeArrayOrDefault on null', () =&gt; {
+      const arr: any = null;
+      const arrVal = makeArrayOrDefault(arr);
+      expect(Array.isArray(arrVal)).toBeTruthy();
+    });
+    test('makeArrayOrDefault on null with defined value', () =&gt; {
+      const arr: any = null;
+      const defaultArr = ['test1', 'test2'];
+      const arrVal = makeArrayOrDefault(arr, defaultArr);
+      expect(Array.isArray(arrVal)).toBeTruthy();
+      expect(arrVal.length).toBe(defaultArr.length);
+    });
+  });
+});
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
