@@ -1,5 +1,4 @@
-/// <reference types="vitest/config" />
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
 import dts from 'vite-plugin-dts';
