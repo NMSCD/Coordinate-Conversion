@@ -13,7 +13,7 @@ jobs:
       code-changed: ${{ steps.filter.outputs.src }}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Filter Changed Files
         uses: AurorNZ/paths-filter@v4
@@ -40,7 +40,7 @@ jobs:
           node-version: lts/*
 
       - name: Checkout Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Get New Version
         run: |
@@ -48,7 +48,7 @@ jobs:
           echo "NEW=${new_version}" >> $GITHUB_ENV
 
       - name: Checkout Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: main
 
