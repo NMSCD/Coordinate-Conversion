@@ -65,7 +65,7 @@ jobs:
 
       - name: Post PR Comment
         if: failure()
-        uses: mshick/add-pr-comment@v2
+        uses: mshick/add-pr-comment@v3
         with:
           message: Please bump the version in package.json!
           refresh-message-position: true
