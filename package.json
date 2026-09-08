@@ -33,7 +33,7 @@
   "homepage": "https://nmscd.com/Coordinate-Conversion/",
   "devDependencies": {
     "@types/node": "^26.0.0",
-    "@vitest/coverage-v8": "^4.0.4",
+    "@vitest/coverage-v8": "^5.0.0",
     "@vitest/ui": "^4.0.4",
     "prettier": "^3.3.3",
     "typescript": "^6.0.2",
