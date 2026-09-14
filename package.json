@@ -33,12 +33,12 @@
   "homepage": "https://nmscd.com/Coordinate-Conversion/",
   "devDependencies": {
     "@types/node": "^26.0.0",
-    "@vitest/coverage-v8": "^4.0.4",
-    "@vitest/ui": "^4.0.4",
+    "@vitest/coverage-v8": "^5.0.0",
+    "@vitest/ui": "^5.0.0",
     "prettier": "^3.3.3",
     "typescript": "^6.0.2",
     "vite": "^8.0.0",
     "vite-plugin-dts": "^5.0.0",
-    "vitest": "^4.0.4"
+    "vitest": "^5.0.0"
   }
 }
